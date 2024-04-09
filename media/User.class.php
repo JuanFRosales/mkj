@@ -1,6 +1,6 @@
 <?php
 
-namespace media;
+namespace MediaProject;
 
 class User {
     private int $user_id;
@@ -19,14 +19,13 @@ class User {
         $this->created_at = new \DateTime($data['created_at']);
     }
 
-    public function getUser() {
+    public function getUser(): array {
         return [
             'user_id' => $this->user_id,
             'username' => $this->username,
             'email' => $this->email,
             'user_level_id' => $this->user_level_id,
-            'created_at' => $this->created_at->format('Y-m-d H:i:s'),
+            'created_at' => $this->created_at->format('Y-m-d H:i:s')
         ];
     }
-
 }

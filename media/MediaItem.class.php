@@ -1,6 +1,6 @@
 <?php
 
-namespace media;
+namespace MediaProject;
 
 class MediaItem {
     private int $media_id;
@@ -23,7 +23,7 @@ class MediaItem {
         $this->created_at = new \DateTime($data['created_at']);
     }
 
-    public function getMediaItem() {
+    public function getMediaItem(): array {
         return [
             'media_id' => $this->media_id,
             'user_id' => $this->user_id,
@@ -32,9 +32,7 @@ class MediaItem {
             'media_type' => $this->media_type,
             'title' => $this->title,
             'description' => $this->description,
-            'created_at' => $this->created_at->format('Y-m-d H:i:s'),
+            'created_at' => $this->created_at->format('Y-m-d H:i:s')
         ];
     }
-
-
 }
